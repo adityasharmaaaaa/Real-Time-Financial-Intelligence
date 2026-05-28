@@ -1,0 +1,55 @@
+# OS files
+
+.DS_Store
+Thumbs.db
+
+# Logs
+
+*.log
+
+# Environment variables
+
+.env
+.env.local
+
+# Dependency folders
+
+node_modules/
+vendor/
+
+# Python
+
+**pycache**/
+*.pyc
+venv/
+.env/
+
+# Build folders
+
+dist/
+build/
+out/
+
+# IDE files
+
+.vscode/
+.idea/
+
+# Temporary files
+
+*.tmp
+*.temp
+
+# Coverage
+
+coverage/
+
+# Package lock files (optional)
+
+# package-lock.json
+
+# yarn.lock
+
+# Mac/Linux hidden files
+
+.*.swp
