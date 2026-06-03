@@ -10,8 +10,11 @@ from pathlib import Path
 import json
 import logging
 from kafka import KafkaProducer
+import os
 
 app = FastAPI()
+
+KAFKA_BOOTSTRAP_SERVERS = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "localhost:9092")
 
 logging.basicConfig(
     level=logging.INFO,
@@ -35,7 +38,7 @@ DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
 KAFKA_TOPIC = "news_events"
 
 Producer = KafkaProducer(
-    bootstrap_servers='localhost:9092',
+    bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
     value_serializer=lambda v: json.dumps(v).encode('utf-8')
 )
 

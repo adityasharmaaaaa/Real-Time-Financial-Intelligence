@@ -11,7 +11,7 @@ Consumer= KafkaConsumer(
     bootstrap_servers='localhost:9092',
     group_id='news_consumer_group',
     value_deserializer=lambda m: json.loads(m.decode('utf-8')),
-    exclude_auto_commit=False
+    enable_auto_commit=False
 )
 
 for message in Consumer:
